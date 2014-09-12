@@ -23,3 +23,12 @@ body {
 .btn:focus {
 	outline: none;
 }
+
+.btn.circle {
+	width: 80px;
+	height: 80px;
+}
+
+.circle {
+	border-radius: 50%;
+}
