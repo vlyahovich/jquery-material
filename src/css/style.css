@@ -1,6 +1,10 @@
 body {
 	font-family: 'Arial', sans-serif;
 	padding: 20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .btn {

@@ -53,6 +53,7 @@
 	function Plugin(element, options) {
 		this.element = element;
 		this.$el = $(element);
+		this.$html = $('html');
 		this.options = $.extend({}, defaults, options);
 		this._defaults = defaults;
 		this._name = pluginName;
@@ -81,6 +82,7 @@
 
 			this.$el.on('mousedown.ripple', $.proxy(this.onTouch, this));
 			this.$el.on('mouseup.ripple', $.proxy(this.onTouchEnd, this));
+			this.$html.on('mouseup.ripple', $.proxy(this.onTouchEnd, this));
 		},
 
 		onTouch: function (e) {
@@ -111,7 +113,7 @@
 			if (this._ctxClear) {
 				this._ctx.globalAlpha -= 0.01;
 			}
-			if (this._ctx.globalAlpha <= 0) {
+			if (this._ctx.globalAlpha <= 0.01) {
 				this.clear();
 			}
 		},
@@ -138,6 +140,7 @@
 
 		destroy: function () {
 			this.$el.off('.ripple');
+			this.$html.off('.ripple');
 		}
 	};
 
