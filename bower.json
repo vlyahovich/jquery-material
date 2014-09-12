@@ -1,0 +1,13 @@
+{
+	"name": "jquery-material",
+	"version": "0.0.1",
+	"main": "build/js/app.js",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"components"
+	],
+	"dependencies": {
+		"jquery": "2.*"
+	}
+}
